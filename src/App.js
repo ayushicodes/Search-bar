@@ -14,14 +14,13 @@ function App() {
   UseSearch(query, pageNumber)
 
   return (
-    <div className="App">
+    <>
       <input type="text" onChange={handleChange} />
       <div>Text</div>
       <div>Text</div>
       <div>Text</div>
       <div>Loading....</div>
-      <UseSearch />
-    </div>
+    </>
   )
 }
 
