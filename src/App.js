@@ -11,16 +11,19 @@ function App() {
     setPageNumber(1)
   }
 
-  UseSearch(query, pageNumber)
+  const { books, loading, hasMore, error } = UseSearch(query, pageNumber)
 
   return (
-    <>
-      <input type="text" onChange={handleChange} />
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Loading....</div>
-    </>
+    <div>
+      <input type="text" value={query} onChange={handleChange} />
+
+      {books.map((book) => {
+        return <div key={book}>{book}</div>
+      })}
+
+      <div>{loading && "loading..."}</div>
+      <div>{error && "Error"}</div>
+    </div>
   )
 }
 
